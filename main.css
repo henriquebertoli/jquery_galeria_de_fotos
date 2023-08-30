@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: #5f27cd;
+  padding: 16px 0;
+  color: #fff;
+  display: flex;
+  border-bottom: 16px solid #341f97;
+  justify-content: center;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+header button {
+  margin-left: 16px;
+}
+
+form {
+  background-color: #c8d6e5;
+  padding: 24px 0;
+  text-align: center;
+  display: none;
+}
+
+form h2 {
+  margin-bottom: 16px;
+}
+
+input,
+button {
+  padding: 8px;
+}
+
+button {
+  background-color: #009432;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#botao-cancelar {
+  background-color: tomato;
+}
+
+ul {
+  display: flex; /* items da lista alinhados horizontal*/
+  flex-wrap: wrap; /*quebra pra uma nova linha */
+}
+
+ul li {
+  max-width: 25%; /*maximo 4 fotos por linha*/
+  list-style: none;
+  position: relative; /*Para position do overlay funcionar como absolute,
+   o elemento pai precisa ser relative*/
+  max-height: 250px; /* Altura maxima para as imagens*/
+  overflow-y: hidden; /*O que sobrar da imagem no eixo vertical esconde.*/
+}
+
+ul li img {
+  width: 100%; /*imagens usam 100% de cada quadrante.*/
+}
+
+.overlay-imagem-link {
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute; /*posiciona elemento  em relacao ao elemento pai*/
+  bottom: 0; /*Determina onde sera posicionado no pai bottom-left*/
+  left: 0;
+  width: 100%; /*Vai ocupar todo o espaco do mesmo*/
+  opacity: 0; /*para esconder o link, usaremos a seguir hover*/
+  transition: all ease 0.5s;
+}
+
+.overlay-imagem-link a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul li:hover .overlay-imagem-link {
+  opacity: 1; /*Quando passamos o mouse o link reaparece.*/
+}
